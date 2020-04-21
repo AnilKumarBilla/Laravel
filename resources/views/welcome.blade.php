@@ -81,12 +81,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ $name }}
-                </div>
-                <div class="title m-b-md">
-                    {{ $location }}
+                    Instacks
                 </div>
             </div>
+
+            <ul>
+              <li> <a href=" {{ route('index') }} ">Index</a> </li>
+              <li> <a href=" {{ route('home') }} ">Homepage</a> </li>
+              <li> <a href=" {{ route('contact') }} ">Contact</a> </li>
+              <li> <a href="{{ route('about') }}">About Us</a> </li>
+            </ul>
+            
         </div>
     </body>
 </html>

@@ -15,45 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get( 'url' , what we need to do with the url);
 
-Route::get('/' , function(){
+Route::get('/', 'HomeController@index')->name('index');
 
-  $name = request('name');
+Route::get('/home_page', 'HomeController@home')->name('home');
 
-  $location = request('location');
+Route::get('/about_page', 'HomeController@about')->name('about');
 
-  return view('welcome' , compact('name','location'));
+Route::get('/contact_page', 'HomeController@contact')->name('contact');
 
+Route::get('/addition/{num1}/{num2}', function($num1, $num2){
+  return $num1 + $num2;
 });
 
-Route::get('/home' , function(){
-
-  // return "Welcome to homepage";
-  return view('homepage');
-
-});
-
-Route::get( '/about' , function(){
-
-  return view('about');
-
-});
-
-Route::get('/contact', function(){
-
-  return view('contact');
-
-});
-
-// Wildcards in URLs
-
-Route::get('/record/{record_num}' , function($record_num){
-
-  return $record_num;
-
-});
-
-Route::get('/record/{record_num}/{record_name}' , function($record_num, $record_name){
-
-  return "Record ".$record_num." belongs to ".$record_name;
-
-});
+Route::get('/add/{num1}/{num2}', 'HomeController@add')->name('addition');
