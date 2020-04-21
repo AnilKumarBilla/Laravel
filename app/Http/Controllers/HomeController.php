@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Blog;
+
 class HomeController extends Controller
 {
     public function index()
@@ -33,6 +35,11 @@ class HomeController extends Controller
     public function add($num1, $num2)
     {
        return "Addition of ".$num1." + ".$num2." = ".($num1 + $num2);
+    }
+
+    public function blogs()
+    {
+      return Blog::select('id','title','content')->get();
     }
 
 }

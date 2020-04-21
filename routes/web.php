@@ -28,3 +28,5 @@ Route::get('/addition/{num1}/{num2}', function($num1, $num2){
 });
 
 Route::get('/add/{num1}/{num2}', 'HomeController@add')->name('addition');
+
+Route::get('/blogs', 'HomeController@blogs');
