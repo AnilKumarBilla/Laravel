@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Welcome to Homepage</h1>
+@extends('layouts.app')
 
-    <ol>
-      <li>Homepage</li>
-      <li>About us page</li>
-      <li>Contact us page</li>
-    </ol>
+@section('component')
 
+  <div class="container">
+      <div class="row justify-content-center p-4">
+        <h1 class="display-4">Homepage</h1>
+      </div>
+  </div>
 
-    <ul>
-      <li> <a href=" {{ route('index') }} ">Index</a> </li>
-      <li> <a href=" {{ route('home') }} ">Homepage</a> </li>
-      <li> <a href=" {{ route('contact') }} ">Contact</a> </li>
-      <li> <a href="{{ route('about') }}">About Us</a> </li>
-    </ul>
+  <div class="container">
+      <div class="row">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+  </div>
 
-  </body>
-</html>
+  <div class="container">
+    @include('list')
+  </div>
+
+@endsection
