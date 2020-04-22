@@ -31,5 +31,6 @@ Route::get('/add/{num1}/{num2}', 'HomeController@add')->name('addition');
 
 Route::get('/blogs', 'BlogsController@blogs')->name('blogs');
 
-
 Route::post('/createblog', 'BlogsController@createBlog')->name('createBlog');
+
+Route::get('/view_blogs', 'BlogsController@viewBlogs')->name('view_blogs');

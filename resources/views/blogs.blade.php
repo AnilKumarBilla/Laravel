@@ -9,6 +9,14 @@
   </div>
 
   <div class="container my-4">
+
+    @if ($message = Session::get('blog'))
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <p>{{ $message }}</p>
+    </div>
+    @endif
+
     <form action="/createblog" method="post">
       @csrf
       <div class="form-group">
@@ -21,6 +29,17 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
   </div>
 
   <div class="container">
